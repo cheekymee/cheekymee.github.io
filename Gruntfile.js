@@ -10,9 +10,9 @@ module.exports = function(grunt){
             dynamic: {
                 files:[{
                     expand: true,
-                    cwd: 'build/img',
+                    cwd: './img',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'build/img'
+                    dest: './img'
                 }]
             }
         },
@@ -20,7 +20,7 @@ module.exports = function(grunt){
 
         // Watch Task
         watch: {
-            files: ['build/sass/style.scss'],
+            files: ['./sass/style.scss'],
             tasks: ['sass']
         },
 
@@ -28,7 +28,7 @@ module.exports = function(grunt){
         sass: {
             dist: { 
                 files: {
-                    'build/css/style.css':'build/sass/style.scss'
+                    './css/style.css':'./sass/style.scss'
                 }
             }
         },
@@ -37,19 +37,19 @@ module.exports = function(grunt){
         browserSync: {
             bsFiles: {
                 src : [
-                    'build/css/style.css',
-                    'build/js/main.js',
-                    'build/home.html',
-                    'build/about.html',
-                    'build/menu.html',
-                    'build/blog.html',
-                    'build/contact.html',
-                    'build/element.html',
+                    './css/style.css',
+                    './js/main.js',
+                    './home.html',
+                    './about.html',
+                    './menu.html',
+                    './blog.html',
+                    './contact.html',
+                    './element.html',
                 ]
             },
             options: {
                 watchTask: true,
-                server: './build'
+                server: './'
             }
         }
 
@@ -61,4 +61,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
     grunt.registerTask('default', ['browserSync','watch']);
+    grunt.registerTask('build', ['browserSync','watch']);
+    // grunt.registerTask('build', ['clean:dist', 'copy', 'imagemin', 'uglify:build', 'concat:css', 'sass:build']);
+
 }
