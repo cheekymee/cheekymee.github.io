@@ -48,9 +48,11 @@ module.exports = function(grunt){
                 ]
             },
             options: {
-                watchTask: true,
+                watchTask: false,
                 server: './',
-                firefox: '-browser "firefox.exe"'
+                browser: ["chrome.exe"],
+                open: false
+                // firefox: '-browser "firefox.exe"'
             }
         }
 
