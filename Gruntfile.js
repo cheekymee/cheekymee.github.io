@@ -92,7 +92,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.registerTask('default', ['browserSync','watch']);
-    grunt.registerTask('build', ['less']);
+    grunt.registerTask('build', []);
     // grunt.registerTask('build', ['clean:dist', 'copy', 'imagemin', 'uglify:build', 'concat:css', 'sass:build']);
 
 }
