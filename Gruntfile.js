@@ -49,7 +49,7 @@ module.exports = function(grunt){
             },
             options: {
                 watchTask: false,
-                server: './build',
+                server: './',
                 browser: ["chrome.exe"],
                 open: false
                 // firefox: '-browser "firefox.exe"'
@@ -92,7 +92,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.registerTask('default', ['browserSync','watch']);
-    grunt.registerTask('build', []);
+    grunt.registerTask('build', ['imagemin']);
     // grunt.registerTask('build', ['clean:dist', 'copy', 'imagemin', 'uglify:build', 'concat:css', 'sass:build']);
 
 }
