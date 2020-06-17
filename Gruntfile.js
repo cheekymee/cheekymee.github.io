@@ -4,7 +4,6 @@ module.exports = function(grunt){
     
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
         //Minify Image
         imagemin: {
             dynamic: {
@@ -51,7 +50,8 @@ module.exports = function(grunt){
                 watchTask: false,
                 server: './',
                 browser: ["chrome.exe"],
-                open: false
+                open: false,
+                port: 8000
                 // firefox: '-browser "firefox.exe"'
             }
         },
